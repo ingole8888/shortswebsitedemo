@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import * as types from "../Redux/actionTypes";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi2";
+import { BsFillSkipForwardBtnFill,BsFillSkipBackwardBtnFill } from 'react-icons/bs';
+
+//import { HiChevronLeft,  } from "react-icons";
 
 const Pagination = () => {
   const { page } = useSelector((store: any) => store);
@@ -12,25 +14,25 @@ const Pagination = () => {
   return (
     <div className="flex justify-center items-center p-4">
       <button
-        className="flex text-white m-2 bg-blue-400 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded"
+        className="flex text-white m-5 bg-teal-700   py-1 px-3  hover:bg-blue-600 rounded"
         disabled={page === 0}
-        style={{ cursor: page === 0 ? "no-drop" : "pointer" }}
+        style={{ cursor: page === 0 ? "no-drop" : "pointer", borderRadius:"5rem" }}
         onClick={() => {
           handleChangePage(page-1);
         }}
       >
-        <HiChevronLeft fontSize={"1.2rem"} />
+        <BsFillSkipBackwardBtnFill fontSize={"3rem"}  style={{paddingLeft:"1rem", paddingRight:"1rem"}}/>
       </button>
-      <div>{page }</div>
+      <div style={{padding:"1rem", backgroundColor:"teal", color:"white"}}>{page}</div>
       <button
-        className="flex text-white m-2 bg-blue-400 border-0 py-1 px-3 focus:outline-none hover:bg-blue-600 rounded"
+        className="flex text-white m-2 bg-teal-700  py-1 px-3 focus:outline-none  rounded"
         disabled={page === 9}
-        style={{ cursor: page === 9 ? "no-drop" : "pointer" }}
+        style={{ cursor: page === 9 ? "no-drop" : "pointer", borderRadius:"5rem" }}
         onClick={() => {
           handleChangePage(page + 1);
         }}
       >
-        <HiChevronRight fontSize={"1.2rem"} />
+        <BsFillSkipForwardBtnFill fontSize={"3rem"} style={{paddingLeft:"1rem", paddingRight:"1rem"}}/>
       </button>
     </div>
   );
