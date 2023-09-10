@@ -47,9 +47,9 @@ function Home() {
   return (
     <>
       <Navbar />
-      <div className="bg-teal-300 w-full">
-      <section className="text-gray-500 body-font">
-        <div className="px-1 py-20 mx-auto">
+      <div className="bg-teal-300 " style={{width:"100%"}}>
+      <div className="text-gray-500 body-font">
+        <div className="px-1 py-10 mx-auto" >
           <div className=" w-full mb-10">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
               <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
@@ -73,7 +73,7 @@ function Home() {
             ) : (
               videos.map((item: any, i: number) => {
                 return (
-                  <div key={i} className="xl:w-1/6 md:w-1/2 p-1 hover-highlight " style={{
+                  <div key={i} className="xl:w-1/4 md:w-1/2 p-1 hover-highlight " style={{
                     boxShadow:
                       "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
                   }}>
@@ -91,7 +91,7 @@ function Home() {
             )}
           </div>
         </div>
-      </section>
+      </div>
       {videos.length > 0 && !isLoading && <Pagination />}
       </div>
     </>

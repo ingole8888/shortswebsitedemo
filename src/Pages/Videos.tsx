@@ -7,6 +7,7 @@ import {
   HiChatBubbleOvalLeftEllipsis,
 } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../Components/Navbar";
 
 const Videos = () => {
   const [playVideo, setPlayVideo] = useState<any>(false);
@@ -42,6 +43,8 @@ const Videos = () => {
   }, []);
 
   return (
+    <>
+    <Navbar/>
     <div
       style={{
         minHeight: "100vh",
@@ -51,10 +54,12 @@ const Videos = () => {
         flexDirection: "column",
       }}
     >
+      
       <div
         style={{ margin: "50px 0 30px 0", color: "#6366f1", cursor: "pointer" }}
       >
-        <HiArrowLongLeft fontSize={"2.4rem"} onClick={() => navigate("/")} />
+        {/* <HiArrowLongLeft fontSize={"2.4rem"} onClick={() => navigate("/")} /> */}
+        <h3 onClick={() => navigate("/")} style={{textDecoration:"none"}}>Home</h3>
       </div>
       <div className="container  mx-auto">
         <div
@@ -66,13 +71,13 @@ const Videos = () => {
             light={currentVideo?.submission?.thumbnail}
             playing={playVideo}
             width="310px"
-            height="70vh"
+            height="78vh"
             style={{
               boxShadow:
                 "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
             }}
           />
-          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+          <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 bg-teal-300">
             <div
               style={{
                 display: "flex",
@@ -135,6 +140,7 @@ const Videos = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
