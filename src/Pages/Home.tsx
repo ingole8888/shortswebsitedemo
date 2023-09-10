@@ -52,11 +52,11 @@ function Home() {
         <div className="px-1 py-10 mx-auto" >
           <div className=" w-full mb-10">
             <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">
+              <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900" style={{marginLeft:"1rem"}}>
                 Trending shorts ...
               </h1>
             </div>
-            <p className=" w-full leading-relaxed text-gray-500">
+            <p className=" w-full leading-relaxed text-gray-500" style={{marginLeft:"1rem"}}>
               Welcome to Trending shorts, your ultimate hub for bite-sized entertainment! 
               Dive into a world of fast-paced, captivating, and enjoyable short videos.
                Immerse yourself in an infinite flow of varied content, savor a 
@@ -73,9 +73,10 @@ function Home() {
             ) : (
               videos.map((item: any, i: number) => {
                 return (
-                  <div key={i} className="xl:w-1/4 md:w-1/2 p-1 hover-highlight " style={{
+                  <div key={i} className="md:w-1/2 hover-highlight image-container" style={{
                     boxShadow:
                       "rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px",
+                      width:"24%",
                   }}>
                     <img
                       onClick={() => {
