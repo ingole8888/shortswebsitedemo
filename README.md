@@ -1,1 +1,1 @@
-# React Video Player (Shorts)
+# React Typescript Video Player (Shorts).
